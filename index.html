@@ -74,7 +74,7 @@
 
 
 
-  <link rel="alternate" href="/atom.xml" title="易录" type="application/atom+xml">
+  <link rel="alternate" href="/atom.xml" title="枫易录" type="application/atom+xml">
 
 
 
@@ -83,13 +83,13 @@
 
 <meta name="description" content="改变从今天开始~~~">
 <meta property="og:type" content="website">
-<meta property="og:title" content="易录">
+<meta property="og:title" content="枫易录">
 <meta property="og:url" content="http://xinglinsky.github.io/index.html">
-<meta property="og:site_name" content="易录">
+<meta property="og:site_name" content="枫易录">
 <meta property="og:description" content="改变从今天开始~~~">
 <meta property="og:locale" content="zh-CN">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="易录">
+<meta name="twitter:title" content="枫易录">
 <meta name="twitter:description" content="改变从今天开始~~~">
 
 
@@ -126,7 +126,7 @@
 
 
 
-  <title>易录</title>
+  <title>枫易录</title>
   
 
 
@@ -157,7 +157,7 @@
     <div class="custom-logo-site-title">
       <a href="/" class="brand" rel="start">
         <span class="logo-line-before"><i></i></span>
-        <span class="site-title">易录</span>
+        <span class="site-title">枫易录</span>
         <span class="logo-line-after"><i></i></span>
       </a>
     </div>
@@ -243,7 +243,7 @@
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="易录">
+      <meta itemprop="name" content="枫易录">
     </span>
 
     
@@ -275,6 +275,28 @@
             
           </span>
 
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/programming/" itemprop="url" rel="index">
+                    <span itemprop="name">编程</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
           
 
           
@@ -308,16 +330,17 @@
             <p>Win10安装会比较麻烦，下面会特殊说明。</p>
 <h3 id="卸载"><a href="#卸载" class="headerlink" title="卸载"></a>卸载</h3><p>如果本地上有安装过VS2010的话，或者安装失败时，很有可能是因为运行库的版本问题。需要卸载相关组件。  </p>
 <ul>
-<li>Visual c++ 2010 x86 redistributable</li>
+<li><p>Visual c++ 2010 x86 redistributable</p>
+</li>
 <li><p>Visual c++ 2010 x64 redistributable（64位windows）<br>也可以直接通过命令行来卸载（没有安装的话会提示不存在）：  </p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">msiexec /x &#123;2F8B731A-5F2D-3EA8-8B25-C3E5E43F4BDB&#125;</div><div class="line">msiexec /x &#123;81455DEB-FC7E-3EE5-85CA-2EBDD9FD61EB&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">msiexec /x &#123;2F8B731A-5F2D-3EA8-8B25-C3E5E43F4BDB&#125;</span><br><span class="line">msiexec /x &#123;81455DEB-FC7E-3EE5-85CA-2EBDD9FD61EB&#125;</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>Microsoft Visual C++ Compilers 2010 X86和X64版本<br>需要在注册表中查找是否存在，路径为HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall，<br>查找Display name为“Microsoft Visual C++ Compilers 2010 Standard-enu-x86”和“Microsoft Visual C++ Compilers 2010 Standard-enu-x64”，然后卸载。</p>
 </li>
 </ul>
-<h3 id="下载、运行安装SDK7-1程序"><a href="#下载、运行安装SDK7-1程序" class="headerlink" title="下载、运行安装SDK7.1程序"></a>下载、运行安装SDK7.1程序</h3><p><a href="https://www.microsoft.com/en-us/download/details.aspx?id=17851" target="_blank" rel="external">.NET 4.0下载地址</a><br>如果本地已安装.NET4.0，可以不用安装。如果本机没有安装VS2010而且有编译的需求，那下载任意版本安装下。<br><a href="https://www.microsoft.com/en-us/download/details.aspx?id=8279" target="_blank" rel="external">SDK7.1下载地址</a><br>如果已安装.NET4.0，可能会提示.NET版本问题，直接忽略。<br><strong>Win10注意事项</strong></p>
+<h3 id="下载、运行安装SDK7-1程序"><a href="#下载、运行安装SDK7-1程序" class="headerlink" title="下载、运行安装SDK7.1程序"></a>下载、运行安装SDK7.1程序</h3><p><a href="https://www.microsoft.com/en-us/download/details.aspx?id=17851" target="_blank" rel="noopener">.NET 4.0下载地址</a><br>如果本地已安装.NET4.0，可以不用安装。如果本机没有安装VS2010而且有编译的需求，那下载任意版本安装下。<br><a href="https://www.microsoft.com/en-us/download/details.aspx?id=8279" target="_blank" rel="noopener">SDK7.1下载地址</a><br>如果已安装.NET4.0，可能会提示.NET版本问题，直接忽略。<br><strong>Win10注意事项</strong></p>
 <ol>
-<li>下载操作系统对应版本的ISO文件：<br><a href="https://www.microsoft.com/en-us/download/details.aspx?id=8442" target="_blank" rel="external">ISO 镜像下载说明</a><br><a href="http://download.microsoft.com/download/F/1/0/F10113F5-B750-4969-A255-274341AC6BCE/GRMSDK_EN_DVD.iso" target="_blank" rel="external">ISO 32位下载地址</a><br><a href="http://download.microsoft.com/download/F/1/0/F10113F5-B750-4969-A255-274341AC6BCE/GRMSDKX_EN_DVD.iso" target="_blank" rel="external">ISO 64位下载地址</a></li>
+<li>下载操作系统对应版本的ISO文件：<br><a href="https://www.microsoft.com/en-us/download/details.aspx?id=8442" target="_blank" rel="noopener">ISO 镜像下载说明</a><br><a href="http://download.microsoft.com/download/F/1/0/F10113F5-B750-4969-A255-274341AC6BCE/GRMSDK_EN_DVD.iso" target="_blank" rel="noopener">ISO 32位下载地址</a><br><a href="http://download.microsoft.com/download/F/1/0/F10113F5-B750-4969-A255-274341AC6BCE/GRMSDKX_EN_DVD.iso" target="_blank" rel="noopener">ISO 64位下载地址</a></li>
 <li>直接运行Setup\SDKSetup.exe安装。</li>
 </ol>
 <h3 id="修复VS2010"><a href="#修复VS2010" class="headerlink" title="修复VS2010"></a>修复VS2010</h3><p>如果有需要的话，可以重新运行VS2010安装程序或者在控制面板-&gt;程序-&gt;VS2010右击修改，选择修复并执行。</p>
@@ -379,7 +402,7 @@
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="易录">
+      <meta itemprop="name" content="枫易录">
     </span>
 
     
@@ -424,19 +447,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/编程/" itemprop="url" rel="index">
+                  <a href="/categories/programming/" itemprop="url" rel="index">
                     <span itemprop="name">编程</span>
-                  </a>
-                </span>
-
-                
-                
-                  , 
-                
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/编程/C/" itemprop="url" rel="index">
-                    <span itemprop="name">C++</span>
                   </a>
                 </span>
 
@@ -476,26 +488,33 @@
           
             <h4 id="环境：Pyqt4-8-32位，python2-7-3-32位"><a href="#环境：Pyqt4-8-32位，python2-7-3-32位" class="headerlink" title="环境：Pyqt4.8 32位，python2.7.3 32位"></a>环境：Pyqt4.8 32位，python2.7.3 32位</h4><p>你是不是每次看到什么字符编码、文件编码和字符串类型，都会有些懵逼呢？反正我有点，以前情况不复杂，这次遇到个坑，特此记录下。</p>
 <ul>
-<li>背景：<br>从<strong>qrc</strong>文件中读取某文本文件，然后解析成json，并显示在Qt控件上。该文件以<strong>utf-8</strong>编码，并保存有<strong>中文</strong>，对，就是这个中文的引出的话题,不是中文也就不复杂了……  </li>
+<li><p>背景：<br>从<strong>qrc</strong>文件中读取某文本文件，然后解析成json，并显示在Qt控件上。该文件以<strong>utf-8</strong>编码，并保存有<strong>中文</strong>，对，就是这个中文的引出的话题,不是中文也就不复杂了……  </p>
+</li>
 <li><p>分析：</p>
 <ol>
 <li><p>从rcc编译的qrc文件中读取文件，也就意味着无法使用python的标准代码：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">with</span> open(file_path) <span class="keyword">as</span> f:</div><div class="line">	content = json.load(f)</div><div class="line">	<span class="keyword">print</span> content</div></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">with</span> open(file_path) <span class="keyword">as</span> f:</span><br><span class="line">	content = json.load(f)</span><br><span class="line">	<span class="keyword">print</span> content</span><br></pre></td></tr></table></figure>
+
 <p>别无选择，只能使用QFile。</p>
 </li>
-<li>说到QFile，自然要用到QTextStream了。</li>
-<li>再使用python unicode()函数将str对象解码。</li>
+<li><p>说到QFile，自然要用到QTextStream了。</p>
+</li>
+<li><p>再使用python unicode()函数将str对象解码。</p>
+</li>
 <li><p>最后使用json库loads()方法，解析成json对象。<br>基本代码是这样的：  </p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">read_file</span><span class="params">(path)</span>:</span></div><div class="line">	<span class="keyword">try</span>:</div><div class="line">		f = QtCore.QFile(path)</div><div class="line">		<span class="keyword">if</span> <span class="keyword">not</span> f.open(QtCore.QFile.ReadOnly | QtCore.QFile.Text):</div><div class="line">			<span class="keyword">return</span> <span class="string">""</span></div><div class="line">		ts = QtCore.QTextStream(f)</div><div class="line">		tsData = ts.readAll()</div><div class="line">		content = unicode(tsData, <span class="string">"utf-8"</span>, <span class="string">"ignore"</span>)</div><div class="line">		<span class="keyword">return</span> json.loads(content)</div><div class="line">	<span class="keyword">except</span>:</div><div class="line">		<span class="keyword">import</span> traceback</div><div class="line">		traceback.print_exc()</div><div class="line">	<span class="keyword">finally</span>:</div><div class="line">		f.close()</div></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">read_file</span><span class="params">(path)</span>:</span></span><br><span class="line">	<span class="keyword">try</span>:</span><br><span class="line">		f = QtCore.QFile(path)</span><br><span class="line">		<span class="keyword">if</span> <span class="keyword">not</span> f.open(QtCore.QFile.ReadOnly | QtCore.QFile.Text):</span><br><span class="line">			<span class="keyword">return</span> <span class="string">""</span></span><br><span class="line">		ts = QtCore.QTextStream(f)</span><br><span class="line">		tsData = ts.readAll()</span><br><span class="line">		content = unicode(tsData, <span class="string">"utf-8"</span>, <span class="string">"ignore"</span>)</span><br><span class="line">		<span class="keyword">return</span> json.loads(content)</span><br><span class="line">	<span class="keyword">except</span>:</span><br><span class="line">		<span class="keyword">import</span> traceback</span><br><span class="line">		traceback.print_exc()</span><br><span class="line">	<span class="keyword">finally</span>:</span><br><span class="line">		f.close()</span><br></pre></td></tr></table></figure>
+
 <p>最后发现报错了……<br>ValueError: Invalid control character at: line 14 column</p>
 </li>
-<li>尝试将tsData先转换为utf-8编码，结果还是报错……<br>还尝试着直接使用str()等等方法，包括网上的一些技巧，比如：json.loads(content, strict=False)，都失败了……</li>
+<li><p>尝试将tsData先转换为utf-8编码，结果还是报错……<br>还尝试着直接使用str()等等方法，包括网上的一些技巧，比如：json.loads(content, strict=False)，都失败了……</p>
+</li>
 </ol>
 </li>
 <li><p>解决及总结：</p>
 <ol>
-<li>QTextStream在读取文本文件时，会默认使用Local的字符编码，如果不指定编码，会使后续的处理寸步难行……<br>后续有个官方链接说明了<br>For Python v2 the following conversions are done by default.<br>If Qt expects a char <em>, signed char </em> or an unsigned char <em> (or a const version) then PyQt4 will accept a unicode or QString that contains only ASCII characters, a str, a QByteArray, or a Python object that implements the buffer protocol.<br>If Qt expects a char, signed char or an unsigned char (or a const version) then PyQt4 will accept the same types as for char </em>, signed char <em> and unsigned char </em> and also require that a single character is provided.<br>If Qt expects a QString then PyQt4 will accept a unicode, a str that contains only ASCII characters, a QChar or a QByteArray.<br>If Qt expects a QByteArray then PyQt4 will accept a unicode that contains only Latin-1 characters, or a str</li>
-<li>Unicode()在不指定encoding参数的情况下，有两种操作。如果字符串是str对象，则会调用str()，也就是使用python默认的ascci编码来解码。如果已经是Unicode对象则不会任何附加操作。<br>If no optional parameters are given, unicode() will mimic the behaviour of str() except that it returns Unicode strings instead of 8-bit strings. More precisely, if object is a Unicode string or subclass it will return that Unicode string without any additional decoding applied.<br>所以在这里，我们需要指定utf-8的编码格式，才能转化为unicode对象。<br>最后代码如下：<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line"><span class="meta">@contextmanager</span></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">read_file</span><span class="params">(path)</span>:</span></div><div class="line">	<span class="keyword">try</span>:</div><div class="line">		f = QtCore.QFile(path)</div><div class="line">		<span class="keyword">if</span> f.open(QtCore.QFile.ReadOnly | QtCore.QFile.Text):</div><div class="line">			ts = QtCore.QTextStream(f)</div><div class="line">			ts.setCodec(<span class="string">"utf-8"</span>)</div><div class="line">			tsData = ts.readAll()</div><div class="line">			content = unicode(tsData.toUtf8(), <span class="string">"utf-8"</span>, <span class="string">"ignore"</span>)</div><div class="line">			<span class="keyword">yield</span> json.loads(content)</div><div class="line">		<span class="keyword">else</span>:</div><div class="line">			<span class="keyword">yield</span> <span class="string">""</span></div><div class="line">	<span class="keyword">except</span>:</div><div class="line">		<span class="keyword">import</span> traceback</div><div class="line">		traceback.print_exc()</div><div class="line">		<span class="keyword">yield</span> <span class="string">""</span></div><div class="line">	<span class="keyword">finally</span>:</div><div class="line">		f.close()</div></pre></td></tr></table></figure>
+<li>QTextStream在读取文本文件时，会默认使用Local的字符编码，如果不指定编码，会使后续的处理寸步难行……<br>后续有个官方链接说明了<br>For Python v2 the following conversions are done by default.<br>If Qt expects a char *, signed char * or an unsigned char * (or a const version) then PyQt4 will accept a unicode or QString that contains only ASCII characters, a str, a QByteArray, or a Python object that implements the buffer protocol.<br>If Qt expects a char, signed char or an unsigned char (or a const version) then PyQt4 will accept the same types as for char *, signed char * and unsigned char * and also require that a single character is provided.<br>If Qt expects a QString then PyQt4 will accept a unicode, a str that contains only ASCII characters, a QChar or a QByteArray.<br>If Qt expects a QByteArray then PyQt4 will accept a unicode that contains only Latin-1 characters, or a str</li>
+<li>Unicode()在不指定encoding参数的情况下，有两种操作。如果字符串是str对象，则会调用str()，也就是使用python默认的ascci编码来解码。如果已经是Unicode对象则不会任何附加操作。<br>If no optional parameters are given, unicode() will mimic the behaviour of str() except that it returns Unicode strings instead of 8-bit strings. More precisely, if object is a Unicode string or subclass it will return that Unicode string without any additional decoding applied.<br>所以在这里，我们需要指定utf-8的编码格式，才能转化为unicode对象。<br>最后代码如下：<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@contextmanager</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">read_file</span><span class="params">(path)</span>:</span></span><br><span class="line">	<span class="keyword">try</span>:</span><br><span class="line">		f = QtCore.QFile(path)</span><br><span class="line">		<span class="keyword">if</span> f.open(QtCore.QFile.ReadOnly | QtCore.QFile.Text):</span><br><span class="line">			ts = QtCore.QTextStream(f)</span><br><span class="line">			ts.setCodec(<span class="string">"utf-8"</span>)</span><br><span class="line">			tsData = ts.readAll()</span><br><span class="line">			content = unicode(tsData.toUtf8(), <span class="string">"utf-8"</span>, <span class="string">"ignore"</span>)</span><br><span class="line">			<span class="keyword">yield</span> json.loads(content)</span><br><span class="line">		<span class="keyword">else</span>:</span><br><span class="line">			<span class="keyword">yield</span> <span class="string">""</span></span><br><span class="line">	<span class="keyword">except</span>:</span><br><span class="line">		<span class="keyword">import</span> traceback</span><br><span class="line">		traceback.print_exc()</span><br><span class="line">		<span class="keyword">yield</span> <span class="string">""</span></span><br><span class="line">	<span class="keyword">finally</span>:</span><br><span class="line">		f.close()</span><br></pre></td></tr></table></figure>
+
 </li>
 </ol>
 </li>
@@ -505,7 +524,7 @@
 <li>总结：<br>一句话总结：<strong>区分什么是编码，什么是对象，Unicode是中转对象，str-&gt;unicode是解码，unicode-&gt;str是编码。</strong><br>不知在谁的blog上看到的了，很形象，很深刻……谢谢这样仁兄！</li>
 </ul>
 <hr>
-<p>相关链接：<br><a href="http://pyqt.sourceforge.net/Docs/PyQt4/gotchas.html" target="_blank" rel="external">PyQt 4.12 Reference Guide</a></p>
+<p>相关链接：<br><a href="http://pyqt.sourceforge.net/Docs/PyQt4/gotchas.html" target="_blank" rel="noopener">PyQt 4.12 Reference Guide</a></p>
 
           
         
