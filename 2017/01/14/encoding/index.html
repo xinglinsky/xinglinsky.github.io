@@ -6,10 +6,10 @@
 
 
 <html class="theme-next gemini use-motion" lang="zh-CN">
-<head>
-  <meta charset="UTF-8"/>
-<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="theme-color" content="#222">
 
 
@@ -20,8 +20,8 @@
 
 
 
-<meta http-equiv="Cache-Control" content="no-transform" />
-<meta http-equiv="Cache-Control" content="no-siteapp" />
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
 
 
 
@@ -40,7 +40,7 @@
 
   
   
-  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
 
 
 
@@ -48,9 +48,9 @@
 
 
 
-<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
 
-<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
 
 
   <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
@@ -68,44 +68,31 @@
 
 
 
-  <meta name="keywords" content="pyqt,QTextStream,QString,string,unicode" />
+  <meta name="keywords" content="pyqt,QTextStream,QString,string,unicode">
 
 
 
 
 
-  <link rel="alternate" href="/atom.xml" title="易录" type="application/atom+xml" />
+  <link rel="alternate" href="/atom.xml" title="易录" type="application/atom+xml">
 
 
 
 
 
 
-<meta name="description" content="环境：Pyqt4.8 32位，python2.7.3 32位你是不是每次看到什么字符编码、文件编码和字符串类型，都会有些懵逼呢？反正我有点，以前情况不复杂，这次遇到个坑，特此记录下。
-
-背景：从qrc文件中读取某文本文件，然后解析成json，并显示在Qt控件上。该文件以utf-8编码，并保存有中文，对，就是这个中文的引出的话题,不是中文也就不复杂了……  
-分析：
-
-从rcc编译的qrc文件中读取">
+<meta name="description" content="环境：Pyqt4.8 32位，python2.7.3 32位你是不是每次看到什么字符编码、文件编码和字符串类型，都会有些懵逼呢？反正我有点，以前情况不复杂，这次遇到个坑，特此记录下。  背景：从qrc文件中读取某文本文件，然后解析成json，并显示在Qt控件上。该文件以utf-8编码，并保存有中文，对，就是这个中文的引出的话题,不是中文也就不复杂了……   分析：  从rcc编译的qrc文件中读取">
+<meta name="keywords" content="pyqt,QTextStream,QString,string,unicode">
 <meta property="og:type" content="article">
 <meta property="og:title" content="论pyqt 编码的蹊跷——QTextStream、QString、string、unicode相关">
 <meta property="og:url" content="http://xinglinsky.github.io/2017/01/14/encoding/index.html">
 <meta property="og:site_name" content="易录">
-<meta property="og:description" content="环境：Pyqt4.8 32位，python2.7.3 32位你是不是每次看到什么字符编码、文件编码和字符串类型，都会有些懵逼呢？反正我有点，以前情况不复杂，这次遇到个坑，特此记录下。
-
-背景：从qrc文件中读取某文本文件，然后解析成json，并显示在Qt控件上。该文件以utf-8编码，并保存有中文，对，就是这个中文的引出的话题,不是中文也就不复杂了……  
-分析：
-
-从rcc编译的qrc文件中读取">
+<meta property="og:description" content="环境：Pyqt4.8 32位，python2.7.3 32位你是不是每次看到什么字符编码、文件编码和字符串类型，都会有些懵逼呢？反正我有点，以前情况不复杂，这次遇到个坑，特此记录下。  背景：从qrc文件中读取某文本文件，然后解析成json，并显示在Qt控件上。该文件以utf-8编码，并保存有中文，对，就是这个中文的引出的话题,不是中文也就不复杂了……   分析：  从rcc编译的qrc文件中读取">
+<meta property="og:locale" content="zh-CN">
 <meta property="og:updated_time" content="2019-08-29T11:56:46.113Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="论pyqt 编码的蹊跷——QTextStream、QString、string、unicode相关">
-<meta name="twitter:description" content="环境：Pyqt4.8 32位，python2.7.3 32位你是不是每次看到什么字符编码、文件编码和字符串类型，都会有些懵逼呢？反正我有点，以前情况不复杂，这次遇到个坑，特此记录下。
-
-背景：从qrc文件中读取某文本文件，然后解析成json，并显示在Qt控件上。该文件以utf-8编码，并保存有中文，对，就是这个中文的引出的话题,不是中文也就不复杂了……  
-分析：
-
-从rcc编译的qrc文件中读取">
+<meta name="twitter:description" content="环境：Pyqt4.8 32位，python2.7.3 32位你是不是每次看到什么字符编码、文件编码和字符串类型，都会有些懵逼呢？反正我有点，以前情况不复杂，这次遇到个坑，特此记录下。  背景：从qrc文件中读取某文本文件，然后解析成json，并显示在Qt控件上。该文件以utf-8编码，并保存有中文，对，就是这个中文的引出的话题,不是中文也就不复杂了……   分析：  从rcc编译的qrc文件中读取">
 
 
 
@@ -135,7 +122,7 @@
 
 
 
-  <link rel="canonical" href="http://xinglinsky.github.io/2017/01/14/encoding/"/>
+  <link rel="canonical" href="http://xinglinsky.github.io/2017/01/14/encoding/">
 
 
 
@@ -169,7 +156,7 @@
     
 
     <div class="custom-logo-site-title">
-      <a href="/"  class="brand" rel="start">
+      <a href="/" class="brand" rel="start">
         <span class="logo-line-before"><i></i></span>
         <span class="site-title">易录</span>
         <span class="logo-line-after"><i></i></span>
@@ -199,7 +186,7 @@
         <li class="menu-item menu-item-home">
           <a href="/" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
             
             Home
           </a>
@@ -209,7 +196,7 @@
         <li class="menu-item menu-item-archives">
           <a href="/archives/" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
             
             Archives
           </a>
@@ -252,7 +239,7 @@
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="xinglinsky">
-      <meta itemprop="description" content="">
+      <meta itemprop="description" content>
       <meta itemprop="image" content="https://raw.githubusercontent.com/youngzhaojia/youngzhaojia.github.io/master/photo/avatar/young.jpg">
     </span>
 
@@ -288,7 +275,7 @@
           </span>
 
           
-            <span class="post-category" >
+            <span class="post-category">
             
               <span class="post-meta-divider">|</span>
             
@@ -486,9 +473,7 @@
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
-              <img class="site-author-image" itemprop="image"
-                src="https://raw.githubusercontent.com/youngzhaojia/youngzhaojia.github.io/master/photo/avatar/young.jpg"
-                alt="xinglinsky" />
+              <img class="site-author-image" itemprop="image" src="https://raw.githubusercontent.com/youngzhaojia/youngzhaojia.github.io/master/photo/avatar/young.jpg" alt="xinglinsky">
             
               <p class="site-author-name" itemprop="name">xinglinsky</p>
               <p class="site-description motion-element" itemprop="description">改变从今天开始~~~</p>
