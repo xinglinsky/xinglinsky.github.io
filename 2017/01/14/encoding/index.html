@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="pyqt,QTextStream,QString,string,unicode" />
 
 
 
@@ -81,15 +81,31 @@
 
 
 
-<meta name="description" content="改变从今天开始~~~">
-<meta property="og:type" content="website">
-<meta property="og:title" content="易录">
-<meta property="og:url" content="http://xinglinsky.github.io/index.html">
+<meta name="description" content="环境：Pyqt4.8 32位，python2.7.3 32位你是不是每次看到什么字符编码、文件编码和字符串类型，都会有些懵逼呢？反正我有点，以前情况不复杂，这次遇到个坑，特此记录下。
+
+背景：从qrc文件中读取某文本文件，然后解析成json，并显示在Qt控件上。该文件以utf-8编码，并保存有中文，对，就是这个中文的引出的话题,不是中文也就不复杂了……  
+分析：
+
+从rcc编译的qrc文件中读取">
+<meta property="og:type" content="article">
+<meta property="og:title" content="论pyqt 编码的蹊跷——QTextStream、QString、string、unicode相关">
+<meta property="og:url" content="http://xinglinsky.github.io/2017/01/14/encoding/index.html">
 <meta property="og:site_name" content="易录">
-<meta property="og:description" content="改变从今天开始~~~">
+<meta property="og:description" content="环境：Pyqt4.8 32位，python2.7.3 32位你是不是每次看到什么字符编码、文件编码和字符串类型，都会有些懵逼呢？反正我有点，以前情况不复杂，这次遇到个坑，特此记录下。
+
+背景：从qrc文件中读取某文本文件，然后解析成json，并显示在Qt控件上。该文件以utf-8编码，并保存有中文，对，就是这个中文的引出的话题,不是中文也就不复杂了……  
+分析：
+
+从rcc编译的qrc文件中读取">
+<meta property="og:updated_time" content="2019-08-29T11:56:46.113Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="易录">
-<meta name="twitter:description" content="改变从今天开始~~~">
+<meta name="twitter:title" content="论pyqt 编码的蹊跷——QTextStream、QString、string、unicode相关">
+<meta name="twitter:description" content="环境：Pyqt4.8 32位，python2.7.3 32位你是不是每次看到什么字符编码、文件编码和字符串类型，都会有些懵逼呢？反正我有点，以前情况不复杂，这次遇到个坑，特此记录下。
+
+背景：从qrc文件中读取某文本文件，然后解析成json，并显示在Qt控件上。该文件以utf-8编码，并保存有中文，对，就是这个中文的引出的话题,不是中文也就不复杂了……  
+分析：
+
+从rcc编译的qrc文件中读取">
 
 
 
@@ -119,13 +135,13 @@
 
 
 
-  <link rel="canonical" href="http://xinglinsky.github.io/"/>
+  <link rel="canonical" href="http://xinglinsky.github.io/2017/01/14/encoding/"/>
 
 
 
 
 
-  <title>易录</title>
+  <title>论pyqt 编码的蹊跷——QTextStream、QString、string、unicode相关 | 易录</title>
   
 
 
@@ -144,8 +160,7 @@
     
   
 
-  <div class="container sidebar-position-left 
-  page-home">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -218,145 +233,9 @@
         <div class="content-wrap">
           <div id="content" class="content">
             
-  <section id="posts" class="posts-expand">
+
+  <div id="posts" class="posts-expand">
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://xinglinsky.github.io/2019/08/29/windows-install-sdk71/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="xinglinsky">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="https://raw.githubusercontent.com/youngzhaojia/youngzhaojia.github.io/master/photo/avatar/young.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="易录">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/08/29/windows-install-sdk71/" itemprop="url">Windows安装SDK7.1</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-08-29T19:46:16+08:00">
-                2019-08-29
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>Win10安装会比较麻烦，下面会特殊说明。</p>
-<h3 id="卸载"><a href="#卸载" class="headerlink" title="卸载"></a>卸载</h3><p>如果本地上有安装过VS2010的话，或者安装失败时，很有可能是因为运行库的版本问题。需要卸载相关组件。  </p>
-<ul>
-<li>Visual c++ 2010 x86 redistributable</li>
-<li><p>Visual c++ 2010 x64 redistributable（64位windows）<br>也可以直接通过命令行来卸载（没有安装的话会提示不存在）：  </p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">msiexec /x &#123;2F8B731A-5F2D-3EA8-8B25-C3E5E43F4BDB&#125;</div><div class="line">msiexec /x &#123;81455DEB-FC7E-3EE5-85CA-2EBDD9FD61EB&#125;</div></pre></td></tr></table></figure>
-</li>
-<li><p>Microsoft Visual C++ Compilers 2010 X86和X64版本<br>需要在注册表中查找是否存在，路径为HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall，<br>查找Display name为“Microsoft Visual C++ Compilers 2010 Standard-enu-x86”和“Microsoft Visual C++ Compilers 2010 Standard-enu-x64”，然后卸载。</p>
-</li>
-</ul>
-<h3 id="下载、运行安装SDK7-1程序"><a href="#下载、运行安装SDK7-1程序" class="headerlink" title="下载、运行安装SDK7.1程序"></a>下载、运行安装SDK7.1程序</h3><p><a href="https://www.microsoft.com/en-us/download/details.aspx?id=17851" target="_blank" rel="external">.NET 4.0下载地址</a><br>如果本地已安装.NET4.0，可以不用安装。如果本机没有安装VS2010而且有编译的需求，那下载任意版本安装下。<br><a href="https://www.microsoft.com/en-us/download/details.aspx?id=8279" target="_blank" rel="external">SDK7.1下载地址</a><br>如果已安装.NET4.0，可能会提示.NET版本问题，直接忽略。<br><strong>Win10注意事项</strong></p>
-<ol>
-<li>下载操作系统对应版本的ISO文件：<br><a href="https://www.microsoft.com/en-us/download/details.aspx?id=8442" target="_blank" rel="external">ISO 镜像下载说明</a><br><a href="http://download.microsoft.com/download/F/1/0/F10113F5-B750-4969-A255-274341AC6BCE/GRMSDK_EN_DVD.iso" target="_blank" rel="external">ISO 32位下载地址</a><br><a href="http://download.microsoft.com/download/F/1/0/F10113F5-B750-4969-A255-274341AC6BCE/GRMSDKX_EN_DVD.iso" target="_blank" rel="external">ISO 64位下载地址</a></li>
-<li>直接运行Setup\SDKSetup.exe安装。</li>
-</ol>
-<h3 id="修复VS2010"><a href="#修复VS2010" class="headerlink" title="修复VS2010"></a>修复VS2010</h3><p>如果有需要的话，可以重新运行VS2010安装程序或者在控制面板-&gt;程序-&gt;VS2010右击修改，选择修复并执行。</p>
-<p><strong>不想在Win10下折腾的、折腾了还是失败的童鞋，可以选择直接安装VS2012或者VS2015（单独选择SDK）解决。</strong></p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
 
   
 
@@ -386,9 +265,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/01/14/encoding/" itemprop="url">论pyqt 编码的蹊跷——QTextStream、QString、string、unicode相关</a></h1>
+          <h1 class="post-title" itemprop="name headline">论pyqt 编码的蹊跷——QTextStream、QString、string、unicode相关</h1>
         
 
         <div class="post-meta">
@@ -471,9 +348,7 @@
       
 
       
-        
-          
-            <h4 id="环境：Pyqt4-8-32位，python2-7-3-32位"><a href="#环境：Pyqt4-8-32位，python2-7-3-32位" class="headerlink" title="环境：Pyqt4.8 32位，python2.7.3 32位"></a>环境：Pyqt4.8 32位，python2.7.3 32位</h4><p>你是不是每次看到什么字符编码、文件编码和字符串类型，都会有些懵逼呢？反正我有点，以前情况不复杂，这次遇到个坑，特此记录下。</p>
+        <h4 id="环境：Pyqt4-8-32位，python2-7-3-32位"><a href="#环境：Pyqt4-8-32位，python2-7-3-32位" class="headerlink" title="环境：Pyqt4.8 32位，python2.7.3 32位"></a>环境：Pyqt4.8 32位，python2.7.3 32位</h4><p>你是不是每次看到什么字符编码、文件编码和字符串类型，都会有些懵逼呢？反正我有点，以前情况不复杂，这次遇到个坑，特此记录下。</p>
 <ul>
 <li>背景：<br>从<strong>qrc</strong>文件中读取某文本文件，然后解析成json，并显示在Qt控件上。该文件以<strong>utf-8</strong>编码，并保存有<strong>中文</strong>，对，就是这个中文的引出的话题,不是中文也就不复杂了……  </li>
 <li><p>分析：</p>
@@ -506,8 +381,6 @@
 <hr>
 <p>相关链接：<br><a href="http://pyqt.sourceforge.net/Docs/PyQt4/gotchas.html" target="_blank" rel="external">PyQt 4.12 Reference Guide</a></p>
 
-          
-        
       
     </div>
     
@@ -522,14 +395,38 @@
 
     <footer class="post-footer">
       
-
+        <div class="post-tags">
+          
+            <a href="/tags/编码/" rel="tag"># 编码</a>
+          
+            <a href="/tags/Pyqt/" rel="tag"># Pyqt</a>
+          
+        </div>
       
 
       
+      
+      
 
       
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/08/29/windows-install-sdk71/" rel="prev" title="Windows安装SDK7.1">
+                Windows安装SDK7.1 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
       
-        <div class="post-eof"></div>
+
+      
       
     </footer>
   </div>
@@ -539,10 +436,11 @@
   </article>
 
 
-    
-  </section>
 
-  
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -550,6 +448,10 @@
 
 
           
+
+  
+
+
 
         </div>
         
@@ -570,8 +472,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -642,6 +553,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#环境：Pyqt4-8-32位，python2-7-3-32位"><span class="nav-number">1.</span> <span class="nav-text">环境：Pyqt4.8 32位，python2.7.3 32位</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -782,6 +709,10 @@
 
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
 
   
 
