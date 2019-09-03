@@ -68,10 +68,12 @@
 
 
 
-  <meta name="keywords" content="Pyqt,QTextStream,QString,string,unicode">
+  <meta name="keywords" content="Window">
 
 
 
+
+  
 
 
   <link rel="alternate" href="/atom.xml" title="枫易录" type="application/atom+xml">
@@ -81,18 +83,18 @@
 
 
 
-<meta name="description" content="环境：Pyqt4.8 32位，python2.7.3 32位你是不是每次看到什么字符编码、文件编码和字符串类型，都会有些懵逼呢？反正我有点，以前情况不复杂，这次遇到个坑，特此记录下。  背景：从qrc文件中读取某文本文件，然后解析成json，并显示在Qt控件上。该文件以utf-8编码，并保存有中文，对，就是这个中文的引出的话题,不是中文也就不复杂了……    分析：  从rcc编译的qrc文件中读">
-<meta name="keywords" content="Pyqt,QTextStream,QString,string,unicode">
+<meta name="description" content="Window包管理工具Chocolatey安装一个能让你在Window下体验Linux apt/yum类似一键安装开发环境的包管理器。官网地址 https://chocolatey.org/ 安装要求 Windows 7+ / Windows Server 2003+ PowerShell v2+ (Not PowerShell Core yet though) .NET Framework 4+">
+<meta name="keywords" content="Window">
 <meta property="og:type" content="article">
-<meta property="og:title" content="论pyqt 编码的蹊跷——QTextStream、QString、string、unicode相关">
-<meta property="og:url" content="http://xinglinsky.github.io/2017/01/14/encoding/index.html">
+<meta property="og:title" content="Window下开发环境安装教程">
+<meta property="og:url" content="http://xinglinsky.github.io/2019/09/03/env-install/index.html">
 <meta property="og:site_name" content="枫易录">
-<meta property="og:description" content="环境：Pyqt4.8 32位，python2.7.3 32位你是不是每次看到什么字符编码、文件编码和字符串类型，都会有些懵逼呢？反正我有点，以前情况不复杂，这次遇到个坑，特此记录下。  背景：从qrc文件中读取某文本文件，然后解析成json，并显示在Qt控件上。该文件以utf-8编码，并保存有中文，对，就是这个中文的引出的话题,不是中文也就不复杂了……    分析：  从rcc编译的qrc文件中读">
+<meta property="og:description" content="Window包管理工具Chocolatey安装一个能让你在Window下体验Linux apt/yum类似一键安装开发环境的包管理器。官网地址 https://chocolatey.org/ 安装要求 Windows 7+ / Windows Server 2003+ PowerShell v2+ (Not PowerShell Core yet though) .NET Framework 4+">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-08-29T12:46:10.341Z">
+<meta property="og:updated_time" content="2019-09-03T02:37:59.414Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="论pyqt 编码的蹊跷——QTextStream、QString、string、unicode相关">
-<meta name="twitter:description" content="环境：Pyqt4.8 32位，python2.7.3 32位你是不是每次看到什么字符编码、文件编码和字符串类型，都会有些懵逼呢？反正我有点，以前情况不复杂，这次遇到个坑，特此记录下。  背景：从qrc文件中读取某文本文件，然后解析成json，并显示在Qt控件上。该文件以utf-8编码，并保存有中文，对，就是这个中文的引出的话题,不是中文也就不复杂了……    分析：  从rcc编译的qrc文件中读">
+<meta name="twitter:title" content="Window下开发环境安装教程">
+<meta name="twitter:description" content="Window包管理工具Chocolatey安装一个能让你在Window下体验Linux apt/yum类似一键安装开发环境的包管理器。官网地址 https://chocolatey.org/ 安装要求 Windows 7+ / Windows Server 2003+ PowerShell v2+ (Not PowerShell Core yet though) .NET Framework 4+">
 
 
 
@@ -122,13 +124,13 @@
 
 
 
-  <link rel="canonical" href="http://xinglinsky.github.io/2017/01/14/encoding/">
+  <link rel="canonical" href="http://xinglinsky.github.io/2019/09/03/env-install/">
 
 
 
 
 
-  <title>论pyqt 编码的蹊跷——QTextStream、QString、string、unicode相关 | 枫易录</title>
+  <title>Window下开发环境安装教程 | 枫易录</title>
   
 
 
@@ -235,7 +237,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://xinglinsky.github.io/2017/01/14/encoding/">
+    <link itemprop="mainEntityOfPage" href="http://xinglinsky.github.io/2019/09/03/env-install/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="xinglinsky">
@@ -252,7 +254,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">论pyqt 编码的蹊跷——QTextStream、QString、string、unicode相关</h1>
+          <h1 class="post-title" itemprop="name headline">Window下开发环境安装教程</h1>
         
 
         <div class="post-meta">
@@ -264,8 +266,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-01-14T14:00:00+08:00">
-                2017-01-14
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-09-03T10:07:49+08:00">
+                2019-09-03
               </time>
             
 
@@ -324,46 +326,27 @@
       
 
       
-        <h4 id="环境：Pyqt4-8-32位，python2-7-3-32位"><a href="#环境：Pyqt4-8-32位，python2-7-3-32位" class="headerlink" title="环境：Pyqt4.8 32位，python2.7.3 32位"></a>环境：Pyqt4.8 32位，python2.7.3 32位</h4><p>你是不是每次看到什么字符编码、文件编码和字符串类型，都会有些懵逼呢？反正我有点，以前情况不复杂，这次遇到个坑，特此记录下。</p>
-<ul>
-<li><p>背景：<br>从<strong>qrc</strong>文件中读取某文本文件，然后解析成json，并显示在Qt控件上。该文件以<strong>utf-8</strong>编码，并保存有<strong>中文</strong>，对，就是这个中文的引出的话题,不是中文也就不复杂了……  </p>
-</li>
-<li><p>分析：</p>
+        <h2 id="Window包管理工具Chocolatey安装"><a href="#Window包管理工具Chocolatey安装" class="headerlink" title="Window包管理工具Chocolatey安装"></a>Window包管理工具Chocolatey安装</h2><p>一个能让你在Window下体验Linux apt/yum类似一键安装开发环境的包管理器。<br><a href="https://chocolatey.org/" target="_blank" rel="noopener">官网地址 https://chocolatey.org/</a></p>
+<h3 id="安装要求"><a href="#安装要求" class="headerlink" title="安装要求"></a>安装要求</h3><ul>
+<li>Windows 7+ / Windows Server 2003+</li>
+<li>PowerShell v2+ (Not PowerShell Core yet though)</li>
+<li>.NET Framework 4+ (the installation will attempt to install .NET 4.0 if you do not have it installed)</li>
+</ul>
+<h3 id="使用cmd-exe安装"><a href="#使用cmd-exe安装" class="headerlink" title="使用cmd.exe安装"></a>使用cmd.exe安装</h3><figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">@"<span class="variable">%SystemRoot%</span>\System32\WindowsPowerShell\v1.<span class="number">0</span>\powershell.exe" -NoProfile -InputFormat None -ExecutionPolicy Bypass -Command "iex ((New-Object System.<span class="built_in">Net</span>.WebClient).DownloadString('https://chocolatey.org/install.ps1'))" &amp;&amp; <span class="built_in">SET</span> "<span class="built_in">PATH</span>=<span class="variable">%PATH%</span>;<span class="variable">%ALLUSERSPROFILE%</span>\chocolatey\bin"</span><br></pre></td></tr></table></figure>
+
+<h3 id="使用PowerShell-exe安装"><a href="#使用PowerShell-exe安装" class="headerlink" title="使用PowerShell.exe安装"></a>使用PowerShell.exe安装</h3><figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Set-ExecutionPolicy</span> Bypass -Scope <span class="keyword">Process</span> -Force; iex ((<span class="built_in">New-Object</span> System.Net.WebClient).DownloadString(<span class="string">'https://chocolatey.org/install.ps1'</span>))</span><br></pre></td></tr></table></figure>
+
+<h3 id="运行"><a href="#运行" class="headerlink" title="运行"></a>运行</h3><p><code>choco</code><br>查看帮助来获取更多信息，基本命令： search, install, upgrade, uninstall<br>比如，安装svn</p>
 <ol>
-<li><p>从rcc编译的qrc文件中读取文件，也就意味着无法使用python的标准代码：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">with</span> open(file_path) <span class="keyword">as</span> f:</span><br><span class="line">	content = json.load(f)</span><br><span class="line">	<span class="keyword">print</span> content</span><br></pre></td></tr></table></figure>
-
-<p>别无选择，只能使用QFile。</p>
+<li><p>以管理员身份运行命令行并输入：<code>choco search svn</code></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&gt; choco search svn</span><br><span class="line">Chocolatey v0.10.15</span><br><span class="line">svn 1.8.17 [Approved] Downloads cached for licensed users</span><br><span class="line">tortoisesvn 1.12.2.28653 [Approved]</span><br></pre></td></tr></table></figure>
 </li>
-<li><p>说到QFile，自然要用到QTextStream了。</p>
-</li>
-<li><p>再使用python unicode()函数将str对象解码。</p>
-</li>
-<li><p>最后使用json库loads()方法，解析成json对象。<br>基本代码是这样的：  </p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">read_file</span><span class="params">(path)</span>:</span></span><br><span class="line">	<span class="keyword">try</span>:</span><br><span class="line">		f = QtCore.QFile(path)</span><br><span class="line">		<span class="keyword">if</span> <span class="keyword">not</span> f.open(QtCore.QFile.ReadOnly | QtCore.QFile.Text):</span><br><span class="line">			<span class="keyword">return</span> <span class="string">""</span></span><br><span class="line">		ts = QtCore.QTextStream(f)</span><br><span class="line">		tsData = ts.readAll()</span><br><span class="line">		content = unicode(tsData, <span class="string">"utf-8"</span>, <span class="string">"ignore"</span>)</span><br><span class="line">		<span class="keyword">return</span> json.loads(content)</span><br><span class="line">	<span class="keyword">except</span>:</span><br><span class="line">		<span class="keyword">import</span> traceback</span><br><span class="line">		traceback.print_exc()</span><br><span class="line">	<span class="keyword">finally</span>:</span><br><span class="line">		f.close()</span><br></pre></td></tr></table></figure>
-
-<p>最后发现报错了……<br>ValueError: Invalid control character at: line 14 column</p>
-</li>
-<li><p>尝试将tsData先转换为utf-8编码，结果还是报错……<br>还尝试着直接使用str()等等方法，包括网上的一些技巧，比如：json.loads(content, strict=False)，都失败了……</p>
+<li><p>选择安装tortoisesvn, <code>choco install tortoisesvn -y</code></p>
 </li>
 </ol>
-</li>
-<li><p>解决及总结：</p>
-<ol>
-<li>QTextStream在读取文本文件时，会默认使用Local的字符编码，如果不指定编码，会使后续的处理寸步难行……<br>后续有个官方链接说明了<br>For Python v2 the following conversions are done by default.<br>If Qt expects a char *, signed char * or an unsigned char * (or a const version) then PyQt4 will accept a unicode or QString that contains only ASCII characters, a str, a QByteArray, or a Python object that implements the buffer protocol.<br>If Qt expects a char, signed char or an unsigned char (or a const version) then PyQt4 will accept the same types as for char *, signed char * and unsigned char * and also require that a single character is provided.<br>If Qt expects a QString then PyQt4 will accept a unicode, a str that contains only ASCII characters, a QChar or a QByteArray.<br>If Qt expects a QByteArray then PyQt4 will accept a unicode that contains only Latin-1 characters, or a str</li>
-<li>Unicode()在不指定encoding参数的情况下，有两种操作。如果字符串是str对象，则会调用str()，也就是使用python默认的ascci编码来解码。如果已经是Unicode对象则不会任何附加操作。<br>If no optional parameters are given, unicode() will mimic the behaviour of str() except that it returns Unicode strings instead of 8-bit strings. More precisely, if object is a Unicode string or subclass it will return that Unicode string without any additional decoding applied.<br>所以在这里，我们需要指定utf-8的编码格式，才能转化为unicode对象。<br>最后代码如下：<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@contextmanager</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">read_file</span><span class="params">(path)</span>:</span></span><br><span class="line">	<span class="keyword">try</span>:</span><br><span class="line">		f = QtCore.QFile(path)</span><br><span class="line">		<span class="keyword">if</span> f.open(QtCore.QFile.ReadOnly | QtCore.QFile.Text):</span><br><span class="line">			ts = QtCore.QTextStream(f)</span><br><span class="line">			ts.setCodec(<span class="string">"utf-8"</span>)</span><br><span class="line">			tsData = ts.readAll()</span><br><span class="line">			content = unicode(tsData.toUtf8(), <span class="string">"utf-8"</span>, <span class="string">"ignore"</span>)</span><br><span class="line">			<span class="keyword">yield</span> json.loads(content)</span><br><span class="line">		<span class="keyword">else</span>:</span><br><span class="line">			<span class="keyword">yield</span> <span class="string">""</span></span><br><span class="line">	<span class="keyword">except</span>:</span><br><span class="line">		<span class="keyword">import</span> traceback</span><br><span class="line">		traceback.print_exc()</span><br><span class="line">		<span class="keyword">yield</span> <span class="string">""</span></span><br><span class="line">	<span class="keyword">finally</span>:</span><br><span class="line">		f.close()</span><br></pre></td></tr></table></figure>
-
-</li>
-</ol>
-</li>
-</ul>
-<p>有个需要注意的地方，如果要gui控件能正常显示中文，<code>content = unicode(tsData.toUtf8(), &quot;utf-8&quot;, &quot;ignore&quot;)</code>中的<strong>toUtf8()</strong>是必不可少，不然会显示为乱码。 </p>
-<ul>
-<li>总结：<br>一句话总结：<strong>区分什么是编码，什么是对象，Unicode是中转对象，str-&gt;unicode是解码，unicode-&gt;str是编码。</strong><br>不知在谁的blog上看到的了，很形象，很深刻……谢谢这样仁兄！</li>
-</ul>
-<hr>
-<p>相关链接：<br><a href="http://pyqt.sourceforge.net/Docs/PyQt4/gotchas.html" target="_blank" rel="noopener">PyQt 4.12 Reference Guide</a></p>
-
+<h3 id="更新Chocolatey"><a href="#更新Chocolatey" class="headerlink" title="更新Chocolatey"></a>更新Chocolatey</h3><p><code>choco upgrade chocolatey</code></p>
+<h3 id="查看过期并更新"><a href="#查看过期并更新" class="headerlink" title="查看过期并更新"></a>查看过期并更新</h3><p><code>choco outdated</code>  </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">λ choco outdated</span><br><span class="line">Chocolatey v0.10.15</span><br><span class="line">Outdated Packages</span><br><span class="line"> Output is package name | current version | available version | pinned?</span><br><span class="line"></span><br><span class="line">python3|3.7.3|3.7.4|false</span><br><span class="line"></span><br><span class="line">Chocolatey has determined 1 package(s) are outdated.</span><br></pre></td></tr></table></figure>
       
     </div>
     
@@ -380,9 +363,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/编码/" rel="tag"># 编码</a>
-          
-            <a href="/tags/Pyqt/" rel="tag"># Pyqt</a>
+            <a href="/tags/env/" rel="tag"># 环境</a>
           
         </div>
       
@@ -395,15 +376,15 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
+              <a href="/2019/08/29/windows-install-sdk71/" rel="next" title="Windows安装SDK7.1">
+                <i class="fa fa-chevron-left"></i> Windows安装SDK7.1
+              </a>
+            
           </div>
 
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/08/29/windows-install-sdk71/" rel="prev" title="Windows安装SDK7.1">
-                Windows安装SDK7.1 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -544,7 +525,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#环境：Pyqt4-8-32位，python2-7-3-32位"><span class="nav-number">1.</span> <span class="nav-text">环境：Pyqt4.8 32位，python2.7.3 32位</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Window包管理工具Chocolatey安装"><span class="nav-number">1.</span> <span class="nav-text">Window包管理工具Chocolatey安装</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#安装要求"><span class="nav-number">1.1.</span> <span class="nav-text">安装要求</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#使用cmd-exe安装"><span class="nav-number">1.2.</span> <span class="nav-text">使用cmd.exe安装</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#使用PowerShell-exe安装"><span class="nav-number">1.3.</span> <span class="nav-text">使用PowerShell.exe安装</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#运行"><span class="nav-number">1.4.</span> <span class="nav-text">运行</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#更新Chocolatey"><span class="nav-number">1.5.</span> <span class="nav-text">更新Chocolatey</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#查看过期并更新"><span class="nav-number">1.6.</span> <span class="nav-text">查看过期并更新</span></a></li></ol></li></ol></div>
             
 
           </div>

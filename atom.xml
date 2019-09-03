@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://xinglinsky.github.io/"/>
-  <updated>2019-08-29T13:23:48.831Z</updated>
+  <updated>2019-09-03T02:37:59.414Z</updated>
   <id>http://xinglinsky.github.io/</id>
   
   <author>
@@ -17,11 +17,36 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>Window下开发环境安装教程</title>
+    <link href="http://xinglinsky.github.io/2019/09/03/env-install/"/>
+    <id>http://xinglinsky.github.io/2019/09/03/env-install/</id>
+    <published>2019-09-03T02:07:49.000Z</published>
+    <updated>2019-09-03T02:37:59.414Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="Window包管理工具Chocolatey安装"><a href="#Window包管理工具Chocolatey安装" class="headerlink" title="Window包管理工具Chocolatey安装"></a>Window包管理工具Chocolatey安装</h2><p>一个能让你在Window下体验Linux apt/yum类似一键安装开发环境的包管理器。<br><a href="https://chocolatey.org/" target="_blank" rel="noopener">官网地址 https://chocolatey.org/</a></p><h3 id="安装要求"><a href="#安装要求" class="headerlink" title="安装要求"></a>安装要求</h3><ul><li>Windows 7+ / Windows Server 2003+</li><li>PowerShell v2+ (Not PowerShell Core yet though)</li><li>.NET Framework 4+ (the installation will attempt to install .NET 4.0 if you do not have it installed)</li></ul><h3 id="使用cmd-exe安装"><a href="#使用cmd-exe安装" class="headerlink" title="使用cmd.exe安装"></a>使用cmd.exe安装</h3><figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">@"<span class="variable">%SystemRoot%</span>\System32\WindowsPowerShell\v1.<span class="number">0</span>\powershell.exe" -NoProfile -InputFormat None -ExecutionPolicy Bypass -Command "iex ((New-Object System.<span class="built_in">Net</span>.WebClient).DownloadString('https://chocolatey.org/install.ps1'))" &amp;&amp; <span class="built_in">SET</span> "<span class="built_in">PATH</span>=<span class="variable">%PATH%</span>;<span class="variable">%ALLUSERSPROFILE%</span>\chocolatey\bin"</span><br></pre></td></tr></table></figure><h3 id="使用PowerShell-exe安装"><a href="#使用PowerShell-exe安装" class="headerlink" title="使用PowerShell.exe安装"></a>使用PowerShell.exe安装</h3><figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Set-ExecutionPolicy</span> Bypass -Scope <span class="keyword">Process</span> -Force; iex ((<span class="built_in">New-Object</span> System.Net.WebClient).DownloadString(<span class="string">'https://chocolatey.org/install.ps1'</span>))</span><br></pre></td></tr></table></figure><h3 id="运行"><a href="#运行" class="headerlink" title="运行"></a>运行</h3><p><code>choco</code><br>查看帮助来获取更多信息，基本命令： search, install, upgrade, uninstall<br>比如，安装svn</p><ol><li><p>以管理员身份运行命令行并输入：<code>choco search svn</code></p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&gt; choco search svn</span><br><span class="line">Chocolatey v0.10.15</span><br><span class="line">svn 1.8.17 [Approved] Downloads cached for licensed users</span><br><span class="line">tortoisesvn 1.12.2.28653 [Approved]</span><br></pre></td></tr></table></figure></li><li><p>选择安装tortoisesvn, <code>choco install tortoisesvn -y</code></p></li></ol><h3 id="更新Chocolatey"><a href="#更新Chocolatey" class="headerlink" title="更新Chocolatey"></a>更新Chocolatey</h3><p><code>choco upgrade chocolatey</code></p><h3 id="查看过期并更新"><a href="#查看过期并更新" class="headerlink" title="查看过期并更新"></a>查看过期并更新</h3><p><code>choco outdated</code>  </p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">λ choco outdated</span><br><span class="line">Chocolatey v0.10.15</span><br><span class="line">Outdated Packages</span><br><span class="line"> Output is package name | current version | available version | pinned?</span><br><span class="line"></span><br><span class="line">python3|3.7.3|3.7.4|false</span><br><span class="line"></span><br><span class="line">Chocolatey has determined 1 package(s) are outdated.</span><br></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;Window包管理工具Chocolatey安装&quot;&gt;&lt;a href=&quot;#Window包管理工具Chocolatey安装&quot; class=&quot;headerlink&quot; title=&quot;Window包管理工具Chocolatey安装&quot;&gt;&lt;/a&gt;Window包管理工具Chocol
+      
+    
+    </summary>
+    
+      <category term="编程" scheme="http://xinglinsky.github.io/categories/programming/"/>
+    
+    
+      <category term="环境" scheme="http://xinglinsky.github.io/tags/env/"/>
+    
+  </entry>
+  
+  <entry>
     <title>Windows安装SDK7.1</title>
     <link href="http://xinglinsky.github.io/2019/08/29/windows-install-sdk71/"/>
     <id>http://xinglinsky.github.io/2019/08/29/windows-install-sdk71/</id>
     <published>2019-08-29T11:46:16.000Z</published>
-    <updated>2019-08-29T13:23:48.831Z</updated>
+    <updated>2019-09-03T02:11:01.410Z</updated>
     
     <content type="html"><![CDATA[<p>Win10安装会比较麻烦，下面会特殊说明。</p><h3 id="卸载"><a href="#卸载" class="headerlink" title="卸载"></a>卸载</h3><p>如果本地上有安装过VS2010的话，或者安装失败时，很有可能是因为运行库的版本问题。需要卸载相关组件。  </p><ul><li><p>Visual c++ 2010 x86 redistributable</p></li><li><p>Visual c++ 2010 x64 redistributable（64位windows）<br>也可以直接通过命令行来卸载（没有安装的话会提示不存在）：  </p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">msiexec /x &#123;2F8B731A-5F2D-3EA8-8B25-C3E5E43F4BDB&#125;</span><br><span class="line">msiexec /x &#123;81455DEB-FC7E-3EE5-85CA-2EBDD9FD61EB&#125;</span><br></pre></td></tr></table></figure></li><li><p>Microsoft Visual C++ Compilers 2010 X86和X64版本<br>需要在注册表中查找是否存在，路径为HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall，<br>查找Display name为“Microsoft Visual C++ Compilers 2010 Standard-enu-x86”和“Microsoft Visual C++ Compilers 2010 Standard-enu-x64”，然后卸载。</p></li></ul><h3 id="下载、运行安装SDK7-1程序"><a href="#下载、运行安装SDK7-1程序" class="headerlink" title="下载、运行安装SDK7.1程序"></a>下载、运行安装SDK7.1程序</h3><p><a href="https://www.microsoft.com/en-us/download/details.aspx?id=17851" target="_blank" rel="noopener">.NET 4.0下载地址</a><br>如果本地已安装.NET4.0，可以不用安装。如果本机没有安装VS2010而且有编译的需求，那下载任意版本安装下。<br><a href="https://www.microsoft.com/en-us/download/details.aspx?id=8279" target="_blank" rel="noopener">SDK7.1下载地址</a><br>如果已安装.NET4.0，可能会提示.NET版本问题，直接忽略。<br><strong>Win10注意事项</strong></p><ol><li>下载操作系统对应版本的ISO文件：<br><a href="https://www.microsoft.com/en-us/download/details.aspx?id=8442" target="_blank" rel="noopener">ISO 镜像下载说明</a><br><a href="http://download.microsoft.com/download/F/1/0/F10113F5-B750-4969-A255-274341AC6BCE/GRMSDK_EN_DVD.iso" target="_blank" rel="noopener">ISO 32位下载地址</a><br><a href="http://download.microsoft.com/download/F/1/0/F10113F5-B750-4969-A255-274341AC6BCE/GRMSDKX_EN_DVD.iso" target="_blank" rel="noopener">ISO 64位下载地址</a></li><li>直接运行Setup\SDKSetup.exe安装。</li></ol><h3 id="修复VS2010"><a href="#修复VS2010" class="headerlink" title="修复VS2010"></a>修复VS2010</h3><p>如果有需要的话，可以重新运行VS2010安装程序或者在控制面板-&gt;程序-&gt;VS2010右击修改，选择修复并执行。</p><p><strong>不想在Win10下折腾的、折腾了还是失败的童鞋，可以选择直接安装VS2012或者VS2015（单独选择SDK）解决。</strong></p>]]></content>
     
@@ -39,6 +64,8 @@
     
     
       <category term="C++" scheme="http://xinglinsky.github.io/tags/cplugscplus/"/>
+    
+      <category term="环境" scheme="http://xinglinsky.github.io/tags/env/"/>
     
   </entry>
   

@@ -234,6 +234,167 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://xinglinsky.github.io/2019/09/03/env-install/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="xinglinsky">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="https://raw.githubusercontent.com/youngzhaojia/youngzhaojia.github.io/master/photo/avatar/young.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="枫易录">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/09/03/env-install/" itemprop="url">Window下开发环境安装教程</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-09-03T10:07:49+08:00">
+                2019-09-03
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/programming/" itemprop="url" rel="index">
+                    <span itemprop="name">编程</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="Window包管理工具Chocolatey安装"><a href="#Window包管理工具Chocolatey安装" class="headerlink" title="Window包管理工具Chocolatey安装"></a>Window包管理工具Chocolatey安装</h2><p>一个能让你在Window下体验Linux apt/yum类似一键安装开发环境的包管理器。<br><a href="https://chocolatey.org/" target="_blank" rel="noopener">官网地址 https://chocolatey.org/</a></p>
+<h3 id="安装要求"><a href="#安装要求" class="headerlink" title="安装要求"></a>安装要求</h3><ul>
+<li>Windows 7+ / Windows Server 2003+</li>
+<li>PowerShell v2+ (Not PowerShell Core yet though)</li>
+<li>.NET Framework 4+ (the installation will attempt to install .NET 4.0 if you do not have it installed)</li>
+</ul>
+<h3 id="使用cmd-exe安装"><a href="#使用cmd-exe安装" class="headerlink" title="使用cmd.exe安装"></a>使用cmd.exe安装</h3><figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">@"<span class="variable">%SystemRoot%</span>\System32\WindowsPowerShell\v1.<span class="number">0</span>\powershell.exe" -NoProfile -InputFormat None -ExecutionPolicy Bypass -Command "iex ((New-Object System.<span class="built_in">Net</span>.WebClient).DownloadString('https://chocolatey.org/install.ps1'))" &amp;&amp; <span class="built_in">SET</span> "<span class="built_in">PATH</span>=<span class="variable">%PATH%</span>;<span class="variable">%ALLUSERSPROFILE%</span>\chocolatey\bin"</span><br></pre></td></tr></table></figure>
+
+<h3 id="使用PowerShell-exe安装"><a href="#使用PowerShell-exe安装" class="headerlink" title="使用PowerShell.exe安装"></a>使用PowerShell.exe安装</h3><figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Set-ExecutionPolicy</span> Bypass -Scope <span class="keyword">Process</span> -Force; iex ((<span class="built_in">New-Object</span> System.Net.WebClient).DownloadString(<span class="string">'https://chocolatey.org/install.ps1'</span>))</span><br></pre></td></tr></table></figure>
+
+<h3 id="运行"><a href="#运行" class="headerlink" title="运行"></a>运行</h3><p><code>choco</code><br>查看帮助来获取更多信息，基本命令： search, install, upgrade, uninstall<br>比如，安装svn</p>
+<ol>
+<li><p>以管理员身份运行命令行并输入：<code>choco search svn</code></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&gt; choco search svn</span><br><span class="line">Chocolatey v0.10.15</span><br><span class="line">svn 1.8.17 [Approved] Downloads cached for licensed users</span><br><span class="line">tortoisesvn 1.12.2.28653 [Approved]</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>选择安装tortoisesvn, <code>choco install tortoisesvn -y</code></p>
+</li>
+</ol>
+<h3 id="更新Chocolatey"><a href="#更新Chocolatey" class="headerlink" title="更新Chocolatey"></a>更新Chocolatey</h3><p><code>choco upgrade chocolatey</code></p>
+<h3 id="查看过期并更新"><a href="#查看过期并更新" class="headerlink" title="查看过期并更新"></a>查看过期并更新</h3><p><code>choco outdated</code>  </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">λ choco outdated</span><br><span class="line">Chocolatey v0.10.15</span><br><span class="line">Outdated Packages</span><br><span class="line"> Output is package name | current version | available version | pinned?</span><br><span class="line"></span><br><span class="line">python3|3.7.3|3.7.4|false</span><br><span class="line"></span><br><span class="line">Chocolatey has determined 1 package(s) are outdated.</span><br></pre></td></tr></table></figure>
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://xinglinsky.github.io/2019/08/29/windows-install-sdk71/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -608,7 +769,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">2</span>
+                  <span class="site-state-item-count">3</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -630,7 +791,7 @@
               
               <div class="site-state-item site-state-tags">
                 
-                  <span class="site-state-item-count">3</span>
+                  <span class="site-state-item-count">4</span>
                   <span class="site-state-item-name">tags</span>
                 
               </div>
