@@ -81,18 +81,18 @@
 
 
 
-<meta name="description" content="环境：Pyqt4.8 32位，python2.7.3 32位你是不是每次看到什么字符编码、文件编码和字符串类型，都会有些懵逼呢？反正我有点，以前情况不复杂，这次遇到个坑，特此记录下。  背景：从qrc文件中读取某文本文件，然后解析成json，并显示在Qt控件上。该文件以utf-8编码，并保存有中文，对，就是这个中文的引出的话题,不是中文也就不复杂了……    分析：  从rcc编译的qrc文件中读">
+<meta name="description" content="环境：Pyqt4.8 32位，python2.7.3 32位你是不是每次看到什么字符编码、文件编码和字符串类型，都会有些懵逼呢？反正我有点，以前情况不复杂，这次遇到个坑，特此记录下。 背景：从qrc文件中读取某文本文件，然后解析成json，并显示在Qt控件上。该文件以utf-8编码，并保存有中文，对，就是这个中文的引出的话题,不是中文也就不复杂了……   分析：1. 从rcc编译的qrc文件中读取">
 <meta name="keywords" content="Pyqt,QTextStream,QString,string,unicode">
 <meta property="og:type" content="article">
 <meta property="og:title" content="论pyqt 编码的蹊跷——QTextStream、QString、string、unicode相关">
 <meta property="og:url" content="http://xinglinsky.github.io/2017/01/14/encoding/index.html">
 <meta property="og:site_name" content="枫易录">
-<meta property="og:description" content="环境：Pyqt4.8 32位，python2.7.3 32位你是不是每次看到什么字符编码、文件编码和字符串类型，都会有些懵逼呢？反正我有点，以前情况不复杂，这次遇到个坑，特此记录下。  背景：从qrc文件中读取某文本文件，然后解析成json，并显示在Qt控件上。该文件以utf-8编码，并保存有中文，对，就是这个中文的引出的话题,不是中文也就不复杂了……    分析：  从rcc编译的qrc文件中读">
+<meta property="og:description" content="环境：Pyqt4.8 32位，python2.7.3 32位你是不是每次看到什么字符编码、文件编码和字符串类型，都会有些懵逼呢？反正我有点，以前情况不复杂，这次遇到个坑，特此记录下。 背景：从qrc文件中读取某文本文件，然后解析成json，并显示在Qt控件上。该文件以utf-8编码，并保存有中文，对，就是这个中文的引出的话题,不是中文也就不复杂了……   分析：1. 从rcc编译的qrc文件中读取">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-08-29T12:46:10.341Z">
+<meta property="og:updated_time" content="2019-12-03T09:21:09.399Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="论pyqt 编码的蹊跷——QTextStream、QString、string、unicode相关">
-<meta name="twitter:description" content="环境：Pyqt4.8 32位，python2.7.3 32位你是不是每次看到什么字符编码、文件编码和字符串类型，都会有些懵逼呢？反正我有点，以前情况不复杂，这次遇到个坑，特此记录下。  背景：从qrc文件中读取某文本文件，然后解析成json，并显示在Qt控件上。该文件以utf-8编码，并保存有中文，对，就是这个中文的引出的话题,不是中文也就不复杂了……    分析：  从rcc编译的qrc文件中读">
+<meta name="twitter:description" content="环境：Pyqt4.8 32位，python2.7.3 32位你是不是每次看到什么字符编码、文件编码和字符串类型，都会有些懵逼呢？反正我有点，以前情况不复杂，这次遇到个坑，特此记录下。 背景：从qrc文件中读取某文本文件，然后解析成json，并显示在Qt控件上。该文件以utf-8编码，并保存有中文，对，就是这个中文的引出的话题,不是中文也就不复杂了……   分析：1. 从rcc编译的qrc文件中读取">
 
 
 
@@ -324,43 +324,34 @@
       
 
       
-        <h4 id="环境：Pyqt4-8-32位，python2-7-3-32位"><a href="#环境：Pyqt4-8-32位，python2-7-3-32位" class="headerlink" title="环境：Pyqt4.8 32位，python2.7.3 32位"></a>环境：Pyqt4.8 32位，python2.7.3 32位</h4><p>你是不是每次看到什么字符编码、文件编码和字符串类型，都会有些懵逼呢？反正我有点，以前情况不复杂，这次遇到个坑，特此记录下。</p>
-<ul>
-<li><p>背景：<br>从<strong>qrc</strong>文件中读取某文本文件，然后解析成json，并显示在Qt控件上。该文件以<strong>utf-8</strong>编码，并保存有<strong>中文</strong>，对，就是这个中文的引出的话题,不是中文也就不复杂了……  </p>
-</li>
-<li><p>分析：</p>
-<ol>
-<li><p>从rcc编译的qrc文件中读取文件，也就意味着无法使用python的标准代码：</p>
+        <p><strong>环境：</strong>Pyqt4.8 32位，python2.7.3 32位<br>你是不是每次看到什么字符编码、文件编码和字符串类型，都会有些懵逼呢？反正我有点，以前情况不复杂，这次遇到个坑，特此记录下。</p>
+<h4 id="背景："><a href="#背景：" class="headerlink" title="背景："></a>背景：</h4><p>从<strong>qrc</strong>文件中读取某文本文件，然后解析成json，并显示在Qt控件上。该文件以<strong>utf-8</strong>编码，并保存有<strong>中文</strong>，对，就是这个中文的引出的话题,不是中文也就不复杂了……  </p>
+<h4 id="分析："><a href="#分析：" class="headerlink" title="分析："></a>分析：</h4><pre><code>1. 从rcc编译的qrc文件中读取文件，也就意味着无法使用python的标准代码：
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">with</span> open(file_path) <span class="keyword">as</span> f:</span><br><span class="line">	content = json.load(f)</span><br><span class="line">	<span class="keyword">print</span> content</span><br></pre></td></tr></table></figure>
 
-<p>别无选择，只能使用QFile。</p>
-</li>
-<li><p>说到QFile，自然要用到QTextStream了。</p>
-</li>
-<li><p>再使用python unicode()函数将str对象解码。</p>
-</li>
-<li><p>最后使用json库loads()方法，解析成json对象。<br>基本代码是这样的：  </p>
+别无选择，只能使用QFile。
+2. 说到QFile，自然要用到QTextStream了。
+3. 再使用python unicode()函数将str对象解码。
+4. 最后使用json库loads()方法，解析成json对象。
+基本代码是这样的：  
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">read_file</span><span class="params">(path)</span>:</span></span><br><span class="line">	<span class="keyword">try</span>:</span><br><span class="line">		f = QtCore.QFile(path)</span><br><span class="line">		<span class="keyword">if</span> <span class="keyword">not</span> f.open(QtCore.QFile.ReadOnly | QtCore.QFile.Text):</span><br><span class="line">			<span class="keyword">return</span> <span class="string">""</span></span><br><span class="line">		ts = QtCore.QTextStream(f)</span><br><span class="line">		tsData = ts.readAll()</span><br><span class="line">		content = unicode(tsData, <span class="string">"utf-8"</span>, <span class="string">"ignore"</span>)</span><br><span class="line">		<span class="keyword">return</span> json.loads(content)</span><br><span class="line">	<span class="keyword">except</span>:</span><br><span class="line">		<span class="keyword">import</span> traceback</span><br><span class="line">		traceback.print_exc()</span><br><span class="line">	<span class="keyword">finally</span>:</span><br><span class="line">		f.close()</span><br></pre></td></tr></table></figure>
 
-<p>最后发现报错了……<br>ValueError: Invalid control character at: line 14 column</p>
-</li>
-<li><p>尝试将tsData先转换为utf-8编码，结果还是报错……<br>还尝试着直接使用str()等等方法，包括网上的一些技巧，比如：json.loads(content, strict=False)，都失败了……</p>
-</li>
-</ol>
-</li>
-<li><p>解决及总结：</p>
-<ol>
-<li>QTextStream在读取文本文件时，会默认使用Local的字符编码，如果不指定编码，会使后续的处理寸步难行……<br>后续有个官方链接说明了<br>For Python v2 the following conversions are done by default.<br>If Qt expects a char *, signed char * or an unsigned char * (or a const version) then PyQt4 will accept a unicode or QString that contains only ASCII characters, a str, a QByteArray, or a Python object that implements the buffer protocol.<br>If Qt expects a char, signed char or an unsigned char (or a const version) then PyQt4 will accept the same types as for char *, signed char * and unsigned char * and also require that a single character is provided.<br>If Qt expects a QString then PyQt4 will accept a unicode, a str that contains only ASCII characters, a QChar or a QByteArray.<br>If Qt expects a QByteArray then PyQt4 will accept a unicode that contains only Latin-1 characters, or a str</li>
-<li>Unicode()在不指定encoding参数的情况下，有两种操作。如果字符串是str对象，则会调用str()，也就是使用python默认的ascci编码来解码。如果已经是Unicode对象则不会任何附加操作。<br>If no optional parameters are given, unicode() will mimic the behaviour of str() except that it returns Unicode strings instead of 8-bit strings. More precisely, if object is a Unicode string or subclass it will return that Unicode string without any additional decoding applied.<br>所以在这里，我们需要指定utf-8的编码格式，才能转化为unicode对象。<br>最后代码如下：<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@contextmanager</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">read_file</span><span class="params">(path)</span>:</span></span><br><span class="line">	<span class="keyword">try</span>:</span><br><span class="line">		f = QtCore.QFile(path)</span><br><span class="line">		<span class="keyword">if</span> f.open(QtCore.QFile.ReadOnly | QtCore.QFile.Text):</span><br><span class="line">			ts = QtCore.QTextStream(f)</span><br><span class="line">			ts.setCodec(<span class="string">"utf-8"</span>)</span><br><span class="line">			tsData = ts.readAll()</span><br><span class="line">			content = unicode(tsData.toUtf8(), <span class="string">"utf-8"</span>, <span class="string">"ignore"</span>)</span><br><span class="line">			<span class="keyword">yield</span> json.loads(content)</span><br><span class="line">		<span class="keyword">else</span>:</span><br><span class="line">			<span class="keyword">yield</span> <span class="string">""</span></span><br><span class="line">	<span class="keyword">except</span>:</span><br><span class="line">		<span class="keyword">import</span> traceback</span><br><span class="line">		traceback.print_exc()</span><br><span class="line">		<span class="keyword">yield</span> <span class="string">""</span></span><br><span class="line">	<span class="keyword">finally</span>:</span><br><span class="line">		f.close()</span><br></pre></td></tr></table></figure>
-
-</li>
-</ol>
-</li>
-</ul>
-<p>有个需要注意的地方，如果要gui控件能正常显示中文，<code>content = unicode(tsData.toUtf8(), &quot;utf-8&quot;, &quot;ignore&quot;)</code>中的<strong>toUtf8()</strong>是必不可少，不然会显示为乱码。 </p>
-<ul>
-<li>总结：<br>一句话总结：<strong>区分什么是编码，什么是对象，Unicode是中转对象，str-&gt;unicode是解码，unicode-&gt;str是编码。</strong><br>不知在谁的blog上看到的了，很形象，很深刻……谢谢这样仁兄！</li>
-</ul>
+最后发现报错了……
+ValueError: Invalid control character at: line 14 column
+5. 尝试将tsData先转换为utf-8编码，结果还是报错……
+还尝试着直接使用str()等等方法，包括网上的一些技巧，比如：json.loads(content, strict=False)，都失败了……</code></pre><h4 id="解决及总结："><a href="#解决及总结：" class="headerlink" title="解决及总结："></a>解决及总结：</h4><pre><code>1. QTextStream在读取文本文件时，会默认使用Local的字符编码，如果不指定编码，会使后续的处理寸步难行……
+后续有个官方链接说明了
+For Python v2 the following conversions are done by default.
+If Qt expects a char *, signed char * or an unsigned char * (or a const version) then PyQt4 will accept a unicode or QString that contains only ASCII characters, a str, a QByteArray, or a Python object that implements the buffer protocol.
+If Qt expects a char, signed char or an unsigned char (or a const version) then PyQt4 will accept the same types as for char *, signed char * and unsigned char * and also require that a single character is provided.
+If Qt expects a QString then PyQt4 will accept a unicode, a str that contains only ASCII characters, a QChar or a QByteArray.
+If Qt expects a QByteArray then PyQt4 will accept a unicode that contains only Latin-1 characters, or a str
+2. Unicode()在不指定encoding参数的情况下，有两种操作。如果字符串是str对象，则会调用str()，也就是使用python默认的ascci编码来解码。如果已经是Unicode对象则不会任何附加操作。
+If no optional parameters are given, unicode() will mimic the behaviour of str() except that it returns Unicode strings instead of 8-bit strings. More precisely, if object is a Unicode string or subclass it will return that Unicode string without any additional decoding applied.
+所以在这里，我们需要指定utf-8的编码格式，才能转化为unicode对象。
+最后代码如下：
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@contextmanager</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">read_file</span><span class="params">(path)</span>:</span></span><br><span class="line">	<span class="keyword">try</span>:</span><br><span class="line">		f = QtCore.QFile(path)</span><br><span class="line">		<span class="keyword">if</span> f.open(QtCore.QFile.ReadOnly | QtCore.QFile.Text):</span><br><span class="line">			ts = QtCore.QTextStream(f)</span><br><span class="line">			ts.setCodec(<span class="string">"utf-8"</span>)</span><br><span class="line">			tsData = ts.readAll()</span><br><span class="line">			content = unicode(tsData.toUtf8(), <span class="string">"utf-8"</span>, <span class="string">"ignore"</span>)</span><br><span class="line">			<span class="keyword">yield</span> json.loads(content)</span><br><span class="line">		<span class="keyword">else</span>:</span><br><span class="line">			<span class="keyword">yield</span> <span class="string">""</span></span><br><span class="line">	<span class="keyword">except</span>:</span><br><span class="line">		<span class="keyword">import</span> traceback</span><br><span class="line">		traceback.print_exc()</span><br><span class="line">		<span class="keyword">yield</span> <span class="string">""</span></span><br><span class="line">	<span class="keyword">finally</span>:</span><br><span class="line">		f.close()</span><br></pre></td></tr></table></figure></code></pre><p>有个需要注意的地方，如果要gui控件能正常显示中文，<code>content = unicode(tsData.toUtf8(), &quot;utf-8&quot;, &quot;ignore&quot;)</code>中的<strong>toUtf8()</strong>是必不可少，不然会显示为乱码。 </p>
+<h4 id="总结："><a href="#总结：" class="headerlink" title="总结："></a>总结：</h4><p>一句话总结：<strong>区分什么是编码，什么是对象，Unicode是中转对象，str-&gt;unicode是解码，unicode-&gt;str是编码。</strong><br>不知在谁的blog上看到的了，很形象，很深刻……谢谢这样仁兄！</p>
 <hr>
 <p>相关链接：<br><a href="http://pyqt.sourceforge.net/Docs/PyQt4/gotchas.html" target="_blank" rel="noopener">PyQt 4.12 Reference Guide</a></p>
 
@@ -482,7 +473,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">3</span>
+                  <span class="site-state-item-count">5</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -504,7 +495,7 @@
               
               <div class="site-state-item site-state-tags">
                 
-                  <span class="site-state-item-count">4</span>
+                  <span class="site-state-item-count">7</span>
                   <span class="site-state-item-name">tags</span>
                 
               </div>
@@ -544,7 +535,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#环境：Pyqt4-8-32位，python2-7-3-32位"><span class="nav-number">1.</span> <span class="nav-text">环境：Pyqt4.8 32位，python2.7.3 32位</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#背景："><span class="nav-number">1.</span> <span class="nav-text">背景：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#分析："><span class="nav-number">2.</span> <span class="nav-text">分析：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#解决及总结："><span class="nav-number">3.</span> <span class="nav-text">解决及总结：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#总结："><span class="nav-number">4.</span> <span class="nav-text">总结：</span></a></li></ol></div>
             
 
           </div>
